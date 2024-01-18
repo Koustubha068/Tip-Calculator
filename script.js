@@ -2,6 +2,8 @@ let bill = 120
 let numOfppl = 5
 let serviceQuality = 'Great'
 
+
+//the function "CalculateTip" calculates the tip based on the parameter "quality"
 function calculateTip(quality) {
     if(quality === 'Great'){
         return bill * .2
