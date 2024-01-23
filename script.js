@@ -8,7 +8,7 @@ function calculateAndDisplay(){
 
     let tip = calculateTip(bill, serviceQuality)
     let totalBill = calculateTotalBill (bill,tip)
-    let amtPerPers = calculateAmtPerPers(totalBill,numOfPpl)
+    let amtPerPers = calculateAmtPerPers(totalBill,NumOfPpl)
 
     //display the results in HTML document
     document.getElementById('tipResult').innerText = 'Tip: $' + tip.toFixed(2)
@@ -16,7 +16,25 @@ function calculateAndDisplay(){
     document.getElementById('amtPerPersonResult').innerText = 'Amount per person: $' +amtPerPers.toFixed(2)
 }
 
+//Helper function to calculate tip based on the bill and the Service Quality. We need to assign a value to "calculateTip","calculateTotalBill, and calculateAmtPerPers" which are helper functions for tip,totalBill, and amtPerPers
+function calculateTip(bill,quality){
+    if(quality === 'Great'){
+        return bill * .2
+    }else if (quality === 'Good'){
+        return bill *.15
+    }else if(quality === 'Poor'){
+        return bill * .1
+    }else {
+        return 0
+    }
+}
+function calculateTotalBill(bill,tip){
+    return bill + tip 
+}
 
+function calculateAmtPerPers(totalBill,NumOfPpl){
+    return totalBill / NumOfPpl
+}
 
 
 
